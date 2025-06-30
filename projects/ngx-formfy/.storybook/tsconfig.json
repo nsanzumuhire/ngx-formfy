@@ -1,0 +1,29 @@
+{
+  "extends": "../tsconfig.lib.json",
+  "compilerOptions": {
+    "types": [
+      "node"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "zone.js": [
+        "node_modules/zone.js"
+      ],
+      "zone.js/node": [
+        "node_modules/zone.js/dist/zone-node.js"
+      ]
+    }
+  },
+  "exclude": [
+    "../src/test.ts",
+    "../src/**/*.spec.ts"
+  ],
+  "include": [
+    "../src/**/*.stories.*",
+    "./preview.ts"
+  ],
+  "files": [
+    "./typings.d.ts"
+  ]
+}

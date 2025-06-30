@@ -1,0 +1,841 @@
+{
+  "version": "6.0",
+  "nxVersion": "21.2.1",
+  "pathMappings": {
+    "ngx-formfy": [
+      "./dist/ngx-formfy"
+    ],
+    "@spartan-ng/helm/form-field": [
+      "./dist/ui-form-field-helm"
+    ],
+    "@spartan-ng/helm/label": [
+      "./dist/ui-label-helm"
+    ],
+    "@spartan-ng/helm/input": [
+      "./dist/ui-input-helm"
+    ],
+    "@spartan-ng/helm/select": [
+      "./dist/ui-select-helm"
+    ],
+    "@spartan-ng/helm/icon": [
+      "./dist/ui-icon-helm"
+    ],
+    "@spartan-ng/helm/button": [
+      "./dist/ui-button-helm"
+    ],
+    "@spartan-ng/helm/checkbox": [
+      "./dist/ui-checkbox-helm"
+    ],
+    "@spartan-ng/helm/radio-group": [
+      "./dist/ui-radio-group-helm"
+    ],
+    "@spartan-ng/helm/date-picker": [
+      "./dist/ui-date-picker-helm"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {
+      "ui-button-helm": [
+        {
+          "file": "projects/ui-button-helm/README.md",
+          "hash": "16535157818089078959"
+        },
+        {
+          "file": "projects/ui-button-helm/ng-package.json",
+          "hash": "7238623152447042347"
+        },
+        {
+          "file": "projects/ui-button-helm/package.json",
+          "hash": "11146156754572811387",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/ui-button-helm/src/lib/hlm-button.directive.ts",
+          "hash": "17519370046722011180"
+        },
+        {
+          "file": "projects/ui-button-helm/src/lib/hlm-button.token.ts",
+          "hash": "7896754714560199098"
+        },
+        {
+          "file": "projects/ui-button-helm/src/lib/index.ts",
+          "hash": "11744061624709180847"
+        },
+        {
+          "file": "projects/ui-button-helm/src/public-api.ts",
+          "hash": "5480455268816473028"
+        },
+        {
+          "file": "projects/ui-button-helm/tsconfig.lib.json",
+          "hash": "12278520725211347939"
+        },
+        {
+          "file": "projects/ui-button-helm/tsconfig.lib.prod.json",
+          "hash": "17517552510542404852"
+        },
+        {
+          "file": "projects/ui-button-helm/tsconfig.spec.json",
+          "hash": "12090582301966106790"
+        }
+      ],
+      "demo-app": [
+        {
+          "file": "projects/demo-app/public/favicon.ico",
+          "hash": "3988961587069885523"
+        },
+        {
+          "file": "projects/demo-app/src/app/app.config.ts",
+          "hash": "9360863789716180712"
+        },
+        {
+          "file": "projects/demo-app/src/app/app.html",
+          "hash": "15109721789705973429"
+        },
+        {
+          "file": "projects/demo-app/src/app/app.routes.ts",
+          "hash": "12397496131277534773"
+        },
+        {
+          "file": "projects/demo-app/src/app/app.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/demo-app/src/app/app.spec.ts",
+          "hash": "16709036318755929174"
+        },
+        {
+          "file": "projects/demo-app/src/app/app.ts",
+          "hash": "15016028908527656965"
+        },
+        {
+          "file": "projects/demo-app/src/index.html",
+          "hash": "15350873434017630147"
+        },
+        {
+          "file": "projects/demo-app/src/main.ts",
+          "hash": "15944248449879998907"
+        },
+        {
+          "file": "projects/demo-app/src/styles.scss",
+          "hash": "15052778941865177480"
+        },
+        {
+          "file": "projects/demo-app/tsconfig.app.json",
+          "hash": "16498944098133402142"
+        },
+        {
+          "file": "projects/demo-app/tsconfig.spec.json",
+          "hash": "12090582301966106790"
+        }
+      ],
+      "ui-form-field-helm": [
+        {
+          "file": "projects/ui-form-field-helm/README.md",
+          "hash": "13512563456683542886"
+        },
+        {
+          "file": "projects/ui-form-field-helm/ng-package.json",
+          "hash": "4509793238393438676"
+        },
+        {
+          "file": "projects/ui-form-field-helm/package.json",
+          "hash": "3278799386626454497",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/ui-form-field-helm/src/lib/hlm-error.directive.ts",
+          "hash": "2852168629488756221"
+        },
+        {
+          "file": "projects/ui-form-field-helm/src/lib/hlm-form-field.component.ts",
+          "hash": "5626429513457717011"
+        },
+        {
+          "file": "projects/ui-form-field-helm/src/lib/hlm-hint.directive.ts",
+          "hash": "9821852661970092349"
+        },
+        {
+          "file": "projects/ui-form-field-helm/src/lib/index.ts",
+          "hash": "12797642016852205501"
+        },
+        {
+          "file": "projects/ui-form-field-helm/src/public-api.ts",
+          "hash": "13708579608606476225"
+        },
+        {
+          "file": "projects/ui-form-field-helm/tsconfig.lib.json",
+          "hash": "12278520725211347939"
+        },
+        {
+          "file": "projects/ui-form-field-helm/tsconfig.lib.prod.json",
+          "hash": "17517552510542404852"
+        },
+        {
+          "file": "projects/ui-form-field-helm/tsconfig.spec.json",
+          "hash": "12090582301966106790"
+        }
+      ],
+      "ngx-formfy": [
+        {
+          "file": "projects/ngx-formfy/.storybook/main.ts",
+          "hash": "5577716383555601874"
+        },
+        {
+          "file": "projects/ngx-formfy/.storybook/preview.ts",
+          "hash": "8128582404843280137"
+        },
+        {
+          "file": "projects/ngx-formfy/.storybook/tsconfig.json",
+          "hash": "15176863918525292304"
+        },
+        {
+          "file": "projects/ngx-formfy/.storybook/typings.d.ts",
+          "hash": "12793257465398711957"
+        },
+        {
+          "file": "projects/ngx-formfy/README.md",
+          "hash": "13549301113199695252"
+        },
+        {
+          "file": "projects/ngx-formfy/ng-package.json",
+          "hash": "15443643106538642460"
+        },
+        {
+          "file": "projects/ngx-formfy/package-lock.json",
+          "hash": "13927959991561196737"
+        },
+        {
+          "file": "projects/ngx-formfy/package.json",
+          "hash": "13826814924290017963",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/cdk",
+            "npm:@spartan-ng/ui-core",
+            "npm:@spartan-ng/cli",
+            "npm:autoprefixer",
+            "npm:postcss",
+            "npm:tailwindcss",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/ngx-formfy/src/lib/components/formfy-renderer/formfy-renderer.component.html",
+          "hash": "15435024795278404512"
+        },
+        {
+          "file": "projects/ngx-formfy/src/lib/components/formfy-renderer/formfy-renderer.component.ts",
+          "hash": "2683226019393154663"
+        },
+        {
+          "file": "projects/ngx-formfy/src/lib/components/input/checkbox.component.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/ngx-formfy/src/lib/components/input/input.component.ts",
+          "hash": "15549934692575143984"
+        },
+        {
+          "file": "projects/ngx-formfy/src/lib/components/input/select.component.ts",
+          "hash": "16444194109708395524"
+        },
+        {
+          "file": "projects/ngx-formfy/src/lib/components/input/textarea.component.ts",
+          "hash": "1052494593326426841"
+        },
+        {
+          "file": "projects/ngx-formfy/src/lib/components/input/validation-messages.component.ts",
+          "hash": "3275526414864240265"
+        },
+        {
+          "file": "projects/ngx-formfy/src/lib/config/formfy.config.ts",
+          "hash": "8434103047163622964"
+        },
+        {
+          "file": "projects/ngx-formfy/src/lib/modules/formfy.module.ts",
+          "hash": "5281894816190650707"
+        },
+        {
+          "file": "projects/ngx-formfy/src/lib/ngx-formfy.ts",
+          "hash": "7215244958739113872"
+        },
+        {
+          "file": "projects/ngx-formfy/src/lib/providers/formfy.provider.ts",
+          "hash": "9794035841740832459"
+        },
+        {
+          "file": "projects/ngx-formfy/src/lib/services/formfy.service.ts",
+          "hash": "15552972712789884135"
+        },
+        {
+          "file": "projects/ngx-formfy/src/lib/utils/form-settings.ts",
+          "hash": "15246103204148489741"
+        },
+        {
+          "file": "projects/ngx-formfy/src/lib/utils/models.ts",
+          "hash": "1248264481778899166"
+        },
+        {
+          "file": "projects/ngx-formfy/src/lib/utils/validations.ts",
+          "hash": "8567022292063341447"
+        },
+        {
+          "file": "projects/ngx-formfy/src/public-api.ts",
+          "hash": "6470112392396411320"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/.eslintrc.json",
+          "hash": "12125950398489006457"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/Configure.mdx",
+          "hash": "12788482122931483283"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/assets/accessibility.png",
+          "hash": "8320090732909952534"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/assets/accessibility.svg",
+          "hash": "16177534588519463864"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/assets/addon-library.png",
+          "hash": "16374768047356923990"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/assets/assets.png",
+          "hash": "1689741917386238418"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/assets/avif-test-image.avif",
+          "hash": "4094029619605446073"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/assets/context.png",
+          "hash": "1348985643342670004"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/assets/discord.svg",
+          "hash": "14673658905008310428"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/assets/docs.png",
+          "hash": "18280049778802555454"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/assets/figma-plugin.png",
+          "hash": "6723570263244528263"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/assets/github.svg",
+          "hash": "8780849867998685716"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/assets/share.png",
+          "hash": "2975175390326490054"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/assets/styling.png",
+          "hash": "7588361746934983524"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/assets/testing.png",
+          "hash": "9937432921968504604"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/assets/theming.png",
+          "hash": "10878554446503237882"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/assets/tutorials.svg",
+          "hash": "14213303528406854315"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/assets/youtube.svg",
+          "hash": "6388426534316490904"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/button.component.ts",
+          "hash": "13271190828563282115"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/button.css",
+          "hash": "16190920320087051447"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/button.stories.ts",
+          "hash": "3483393507548657729"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/header.component.ts",
+          "hash": "574693712589372042"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/header.css",
+          "hash": "14526687290905363219"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/header.stories.ts",
+          "hash": "2599517179597053624"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/page.component.ts",
+          "hash": "2609295040150141126"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/page.css",
+          "hash": "6442544410431894269"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/page.stories.ts",
+          "hash": "9973339917945744395"
+        },
+        {
+          "file": "projects/ngx-formfy/src/stories/user.ts",
+          "hash": "17700798976138923327"
+        },
+        {
+          "file": "projects/ngx-formfy/tsconfig.lib.json",
+          "hash": "13579767566629628959"
+        },
+        {
+          "file": "projects/ngx-formfy/tsconfig.lib.prod.json",
+          "hash": "17517552510542404852"
+        },
+        {
+          "file": "projects/ngx-formfy/tsconfig.spec.json",
+          "hash": "12090582301966106790"
+        }
+      ],
+      "ui-icon-helm": [
+        {
+          "file": "projects/ui-icon-helm/README.md",
+          "hash": "5392556124052750039"
+        },
+        {
+          "file": "projects/ui-icon-helm/ng-package.json",
+          "hash": "5158118420549692002"
+        },
+        {
+          "file": "projects/ui-icon-helm/package.json",
+          "hash": "8239602324745491616",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/ui-icon-helm/src/lib/hlm-icon.directive.ts",
+          "hash": "3510781170031678997"
+        },
+        {
+          "file": "projects/ui-icon-helm/src/lib/hlm-icon.token.ts",
+          "hash": "1780499468245078594"
+        },
+        {
+          "file": "projects/ui-icon-helm/src/lib/index.ts",
+          "hash": "8238909038763885105"
+        },
+        {
+          "file": "projects/ui-icon-helm/src/public-api.ts",
+          "hash": "6649002624475389507"
+        },
+        {
+          "file": "projects/ui-icon-helm/tsconfig.lib.json",
+          "hash": "12278520725211347939"
+        },
+        {
+          "file": "projects/ui-icon-helm/tsconfig.lib.prod.json",
+          "hash": "17517552510542404852"
+        },
+        {
+          "file": "projects/ui-icon-helm/tsconfig.spec.json",
+          "hash": "12090582301966106790"
+        }
+      ],
+      "ui-select-helm": [
+        {
+          "file": "projects/ui-select-helm/README.md",
+          "hash": "1445832335981606876"
+        },
+        {
+          "file": "projects/ui-select-helm/ng-package.json",
+          "hash": "14416523278186401203"
+        },
+        {
+          "file": "projects/ui-select-helm/package.json",
+          "hash": "12161793319384753633",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/ui-select-helm/src/lib/hlm-select-content.directive.ts",
+          "hash": "5482871154274440790"
+        },
+        {
+          "file": "projects/ui-select-helm/src/lib/hlm-select-group.directive.ts",
+          "hash": "18354729487243533307"
+        },
+        {
+          "file": "projects/ui-select-helm/src/lib/hlm-select-label.directive.ts",
+          "hash": "9847416999988807652"
+        },
+        {
+          "file": "projects/ui-select-helm/src/lib/hlm-select-option.component.ts",
+          "hash": "1267341982032635424"
+        },
+        {
+          "file": "projects/ui-select-helm/src/lib/hlm-select-scroll-down.component.ts",
+          "hash": "1329657292567737568"
+        },
+        {
+          "file": "projects/ui-select-helm/src/lib/hlm-select-scroll-up.component.ts",
+          "hash": "4220073209280768879"
+        },
+        {
+          "file": "projects/ui-select-helm/src/lib/hlm-select-trigger.component.ts",
+          "hash": "13026213927425833268"
+        },
+        {
+          "file": "projects/ui-select-helm/src/lib/hlm-select-value.directive.ts",
+          "hash": "14700253531641109896"
+        },
+        {
+          "file": "projects/ui-select-helm/src/lib/hlm-select.directive.ts",
+          "hash": "5933711319198763352"
+        },
+        {
+          "file": "projects/ui-select-helm/src/lib/index.ts",
+          "hash": "11705396569284371378"
+        },
+        {
+          "file": "projects/ui-select-helm/src/public-api.ts",
+          "hash": "649469963431730328"
+        },
+        {
+          "file": "projects/ui-select-helm/tsconfig.lib.json",
+          "hash": "12278520725211347939"
+        },
+        {
+          "file": "projects/ui-select-helm/tsconfig.lib.prod.json",
+          "hash": "17517552510542404852"
+        },
+        {
+          "file": "projects/ui-select-helm/tsconfig.spec.json",
+          "hash": "12090582301966106790"
+        }
+      ],
+      "ui-date-picker-helm": [
+        {
+          "file": "projects/ui-date-picker-helm/README.md",
+          "hash": "11377505394636531081"
+        },
+        {
+          "file": "projects/ui-date-picker-helm/ng-package.json",
+          "hash": "6078116154642652020"
+        },
+        {
+          "file": "projects/ui-date-picker-helm/package.json",
+          "hash": "2493384555573853583",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/ui-date-picker-helm/src/lib/hlm-date-picker-multi.component.ts",
+          "hash": "15548824300773381709"
+        },
+        {
+          "file": "projects/ui-date-picker-helm/src/lib/hlm-date-picker-multi.token.ts",
+          "hash": "6936144603524779537"
+        },
+        {
+          "file": "projects/ui-date-picker-helm/src/lib/hlm-date-picker.component.ts",
+          "hash": "14043321391885176249"
+        },
+        {
+          "file": "projects/ui-date-picker-helm/src/lib/hlm-date-picker.token.ts",
+          "hash": "5081939093810712570"
+        },
+        {
+          "file": "projects/ui-date-picker-helm/src/lib/index.ts",
+          "hash": "17028773494636702439"
+        },
+        {
+          "file": "projects/ui-date-picker-helm/src/public-api.ts",
+          "hash": "16064354025581603921"
+        },
+        {
+          "file": "projects/ui-date-picker-helm/tsconfig.lib.json",
+          "hash": "12278520725211347939"
+        },
+        {
+          "file": "projects/ui-date-picker-helm/tsconfig.lib.prod.json",
+          "hash": "17517552510542404852"
+        },
+        {
+          "file": "projects/ui-date-picker-helm/tsconfig.spec.json",
+          "hash": "12090582301966106790"
+        }
+      ],
+      "ui-label-helm": [
+        {
+          "file": "projects/ui-label-helm/README.md",
+          "hash": "15968653612069972894"
+        },
+        {
+          "file": "projects/ui-label-helm/ng-package.json",
+          "hash": "11395536392757164163"
+        },
+        {
+          "file": "projects/ui-label-helm/package.json",
+          "hash": "2261755284863701589",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/ui-label-helm/src/lib/hlm-label.directive.ts",
+          "hash": "765508867691155004"
+        },
+        {
+          "file": "projects/ui-label-helm/src/lib/index.ts",
+          "hash": "513386817540792043"
+        },
+        {
+          "file": "projects/ui-label-helm/src/public-api.ts",
+          "hash": "9586703345973702236"
+        },
+        {
+          "file": "projects/ui-label-helm/tsconfig.lib.json",
+          "hash": "12278520725211347939"
+        },
+        {
+          "file": "projects/ui-label-helm/tsconfig.lib.prod.json",
+          "hash": "17517552510542404852"
+        },
+        {
+          "file": "projects/ui-label-helm/tsconfig.spec.json",
+          "hash": "12090582301966106790"
+        }
+      ],
+      "ui-input-helm": [
+        {
+          "file": "projects/ui-input-helm/README.md",
+          "hash": "10986636453222942751"
+        },
+        {
+          "file": "projects/ui-input-helm/ng-package.json",
+          "hash": "10810043076314593749"
+        },
+        {
+          "file": "projects/ui-input-helm/package.json",
+          "hash": "8052379726308525339",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/ui-input-helm/src/lib/hlm-input-error.directive.ts",
+          "hash": "13447628399259260926"
+        },
+        {
+          "file": "projects/ui-input-helm/src/lib/hlm-input.directive.ts",
+          "hash": "17994005371380335882"
+        },
+        {
+          "file": "projects/ui-input-helm/src/lib/index.ts",
+          "hash": "16907837309402157974"
+        },
+        {
+          "file": "projects/ui-input-helm/src/public-api.ts",
+          "hash": "12723442216130566895"
+        },
+        {
+          "file": "projects/ui-input-helm/tsconfig.lib.json",
+          "hash": "12278520725211347939"
+        },
+        {
+          "file": "projects/ui-input-helm/tsconfig.lib.prod.json",
+          "hash": "17517552510542404852"
+        },
+        {
+          "file": "projects/ui-input-helm/tsconfig.spec.json",
+          "hash": "12090582301966106790"
+        }
+      ],
+      "ui-checkbox-helm": [
+        {
+          "file": "projects/ui-checkbox-helm/README.md",
+          "hash": "5916110964968317204"
+        },
+        {
+          "file": "projects/ui-checkbox-helm/ng-package.json",
+          "hash": "15613775032151568467"
+        },
+        {
+          "file": "projects/ui-checkbox-helm/package.json",
+          "hash": "10583857843447166859",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/ui-checkbox-helm/src/lib/hlm-checkbox.component.ts",
+          "hash": "17969379673426020853"
+        },
+        {
+          "file": "projects/ui-checkbox-helm/src/lib/index.ts",
+          "hash": "6757402367824461934"
+        },
+        {
+          "file": "projects/ui-checkbox-helm/src/public-api.ts",
+          "hash": "4487159329277299000"
+        },
+        {
+          "file": "projects/ui-checkbox-helm/tsconfig.lib.json",
+          "hash": "12278520725211347939"
+        },
+        {
+          "file": "projects/ui-checkbox-helm/tsconfig.lib.prod.json",
+          "hash": "17517552510542404852"
+        },
+        {
+          "file": "projects/ui-checkbox-helm/tsconfig.spec.json",
+          "hash": "12090582301966106790"
+        }
+      ],
+      "ui-radio-group-helm": [
+        {
+          "file": "projects/ui-radio-group-helm/README.md",
+          "hash": "1714224705569079098"
+        },
+        {
+          "file": "projects/ui-radio-group-helm/ng-package.json",
+          "hash": "6744958284315308530"
+        },
+        {
+          "file": "projects/ui-radio-group-helm/package.json",
+          "hash": "17441517657995567200",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/ui-radio-group-helm/src/lib/hlm-radio-group.component.ts",
+          "hash": "2887649043406082101"
+        },
+        {
+          "file": "projects/ui-radio-group-helm/src/lib/hlm-radio-indicator.component.ts",
+          "hash": "1492774674057926203"
+        },
+        {
+          "file": "projects/ui-radio-group-helm/src/lib/hlm-radio.component.ts",
+          "hash": "4559956360012973444"
+        },
+        {
+          "file": "projects/ui-radio-group-helm/src/lib/index.ts",
+          "hash": "17954610255271412677"
+        },
+        {
+          "file": "projects/ui-radio-group-helm/src/public-api.ts",
+          "hash": "3030633821428156935"
+        },
+        {
+          "file": "projects/ui-radio-group-helm/tsconfig.lib.json",
+          "hash": "12278520725211347939"
+        },
+        {
+          "file": "projects/ui-radio-group-helm/tsconfig.lib.prod.json",
+          "hash": "17517552510542404852"
+        },
+        {
+          "file": "projects/ui-radio-group-helm/tsconfig.spec.json",
+          "hash": "12090582301966106790"
+        }
+      ]
+    },
+    "nonProjectFiles": [
+      {
+        "file": ".editorconfig",
+        "hash": "4165385352547808172"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "13801113085404105857"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "5331566439708925252"
+      },
+      {
+        "file": ".vscode/launch.json",
+        "hash": "17038929134016848735"
+      },
+      {
+        "file": ".vscode/tasks.json",
+        "hash": "5336636969995539451"
+      },
+      {
+        "file": "README.md",
+        "hash": "13224102154784895335"
+      },
+      {
+        "file": "angular.json",
+        "hash": "1974235112155286980"
+      },
+      {
+        "file": "components.json",
+        "hash": "6646860843608789713"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "5118044717572407240"
+      },
+      {
+        "file": "package.json",
+        "hash": "13219228106854286669"
+      },
+      {
+        "file": "postcss.config.js",
+        "hash": "11220962939300065276"
+      },
+      {
+        "file": "src/styles.css",
+        "hash": "17433050700329015033"
+      },
+      {
+        "file": "tailwind.config.js",
+        "hash": "5726837323415565540"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "12513319020934667269"
+      }
+    ]
+  }
+}

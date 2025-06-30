@@ -1,0 +1,33 @@
+<form *ngIf="form?.controls && settings && fields" [formGroup]="form" (ngSubmit)="onSubmit()" class="w-full" [ngClass]="settings?.formClassName">
+  <ng-container *ngFor="let f of fields">
+    <formfy-input 
+      *ngIf="f.type === 'text' || 
+      f.type === 'email' || 
+      f.type === 'number' || 
+      f.type === 'tel' || 
+      f.type === 'password'" 
+      [field]="f" 
+      [formControlName]="f.name">
+    </formfy-input>
+    <formfy-textarea 
+      *ngIf="f.type==='textarea'" 
+      [field]="f" 
+      [formControlName]="f.name">
+    </formfy-textarea>
+    <formfy-select 
+      *ngIf="f.type==='select'"
+      [field]="f" 
+      [formControlName]="f.name">
+    </formfy-select>
+  </ng-container>
+
+  <div class="flex justify-end space-x-2">
+    <button *ngIf="settings.showCancelButton" type="button" hlmBtn class="btn-cancel">
+      {{ settings.cancelButtonText }}
+    </button>
+    <button type="submit" hlmBtn [ngStyle]="{ 'background-color': settings.submitButtonColor }">
+      {{ settings.submitButtonText }}
+    </button>
+  </div>
+</form>
+

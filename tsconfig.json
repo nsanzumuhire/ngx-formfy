@@ -1,5 +1,3 @@
-/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
-/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -10,7 +8,34 @@
     "paths": {
       "ngx-formfy": [
         "./dist/ngx-formfy"
-      ]
+      ],
+      "@spartan-ng/helm/form-field": [
+        "./dist/ui-form-field-helm"
+      ],
+      "@spartan-ng/helm/label": [
+        "./dist/ui-label-helm"
+      ],
+      "@spartan-ng/helm/input": [
+        "./dist/ui-input-helm"
+      ],
+      "@spartan-ng/helm/select": [
+        "./dist/ui-select-helm"
+      ],
+      "@spartan-ng/helm/icon": [
+        "./dist/ui-icon-helm"
+      ],
+      "@spartan-ng/helm/button": [
+        "./dist/ui-button-helm"
+      ],
+      "@spartan-ng/helm/checkbox": [
+        "./dist/ui-checkbox-helm"
+      ],
+      "@spartan-ng/helm/radio-group": [
+        "./dist/ui-radio-group-helm"
+      ],
+      "@spartan-ng/helm/date-picker": [
+        "./dist/ui-date-picker-helm"
+      ],
     },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
@@ -34,6 +59,66 @@
     },
     {
       "path": "./projects/ngx-formfy/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/demo-app/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/demo-app/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ui-input-helm/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ui-input-helm/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ui-select-helm/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ui-select-helm/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ui-icon-helm/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ui-icon-helm/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ui-button-helm/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ui-button-helm/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ui-checkbox-helm/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ui-checkbox-helm/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ui-label-helm/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ui-label-helm/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ui-radio-group-helm/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ui-radio-group-helm/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ui-date-picker-helm/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ui-date-picker-helm/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ui-form-field-helm/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ui-form-field-helm/tsconfig.spec.json"
     }
   ]
 }

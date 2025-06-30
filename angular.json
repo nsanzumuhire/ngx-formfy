@@ -26,6 +26,385 @@
           "options": {
             "tsConfig": "projects/ngx-formfy/tsconfig.spec.json"
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/ngx-formfy/.storybook",
+            "browserTarget": "ngx-formfy:build",
+            "compodoc": false,
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/ngx-formfy/.storybook",
+            "browserTarget": "ngx-formfy:build",
+            "compodoc": false,
+            "outputDir": "dist/storybook/ngx-formfy"
+          }
+        }
+      }
+    },
+    "demo-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/demo-app",
+      "sourceRoot": "projects/demo-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/demo-app/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/demo-app/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/demo-app/public"
+              }
+            ],
+            "styles": [
+              "projects/demo-app/src/styles.scss"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "demo-app:build:production"
+            },
+            "development": {
+              "buildTarget": "demo-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/demo-app/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/demo-app/public"
+              }
+            ],
+            "styles": [
+              "projects/demo-app/src/styles.scss"
+            ]
+          }
+        }
+      }
+    },
+    "ui-input-helm": {
+      "projectType": "library",
+      "root": "projects/ui-input-helm",
+      "sourceRoot": "projects/ui-input-helm/src",
+      "prefix": "spartan",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-input-helm/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ui-input-helm/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/ui-input-helm/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "ui-select-helm": {
+      "projectType": "library",
+      "root": "projects/ui-select-helm",
+      "sourceRoot": "projects/ui-select-helm/src",
+      "prefix": "spartan",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-select-helm/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ui-select-helm/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/ui-select-helm/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "ui-icon-helm": {
+      "projectType": "library",
+      "root": "projects/ui-icon-helm",
+      "sourceRoot": "projects/ui-icon-helm/src",
+      "prefix": "spartan",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-icon-helm/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ui-icon-helm/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/ui-icon-helm/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "ui-button-helm": {
+      "projectType": "library",
+      "root": "projects/ui-button-helm",
+      "sourceRoot": "projects/ui-button-helm/src",
+      "prefix": "spartan",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-button-helm/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ui-button-helm/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/ui-button-helm/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "ui-checkbox-helm": {
+      "projectType": "library",
+      "root": "projects/ui-checkbox-helm",
+      "sourceRoot": "projects/ui-checkbox-helm/src",
+      "prefix": "spartan",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-checkbox-helm/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ui-checkbox-helm/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/ui-checkbox-helm/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "ui-date-picker-helm": {
+      "projectType": "library",
+      "root": "projects/ui-date-picker-helm",
+      "sourceRoot": "projects/ui-date-picker-helm/src",
+      "prefix": "spartan",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-date-picker-helm/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ui-date-picker-helm/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/ui-date-picker-helm/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "ui-radio-group-helm": {
+      "projectType": "library",
+      "root": "projects/ui-radio-group-helm",
+      "sourceRoot": "projects/ui-radio-group-helm/src",
+      "prefix": "spartan",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-radio-group-helm/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ui-radio-group-helm/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/ui-radio-group-helm/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "ui-label-helm": {
+      "projectType": "library",
+      "root": "projects/ui-label-helm",
+      "sourceRoot": "projects/ui-label-helm/src",
+      "prefix": "spartan",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-label-helm/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ui-label-helm/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/ui-label-helm/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "ui-form-field-helm": {
+      "projectType": "library",
+      "root": "projects/ui-form-field-helm",
+      "sourceRoot": "projects/ui-form-field-helm/src",
+      "prefix": "spartan",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-form-field-helm/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ui-form-field-helm/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/ui-form-field-helm/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
         }
       }
     }
