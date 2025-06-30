@@ -1,27 +1,88 @@
-<form *ngIf="form?.controls && settings && fields" [formGroup]="form" (ngSubmit)="onSubmit()" class="w-full" [ngClass]="settings?.formClassName">
-  <ng-container *ngFor="let f of fields">
-    <formfy-input 
-      *ngIf="f.type === 'text' || 
-      f.type === 'email' || 
-      f.type === 'number' || 
-      f.type === 'tel' || 
-      f.type === 'password'" 
-      [field]="f" 
-      [formControlName]="f.name">
-    </formfy-input>
-    <formfy-textarea 
-      *ngIf="f.type==='textarea'" 
-      [field]="f" 
-      [formControlName]="f.name">
-    </formfy-textarea>
-    <formfy-select 
-      *ngIf="f.type==='select'"
-      [field]="f" 
-      [formControlName]="f.name">
-    </formfy-select>
-  </ng-container>
+<form *ngIf="form?.controls && settings && fields" [formGroup]="form" (ngSubmit)="onSubmit()" class="w-full">
+  <div [class]="settings.formClassName" [ngStyle]="settings.formStyle">
 
-  <div class="flex justify-end space-x-2">
+    <ng-container [ngSwitch]="settings.layout">
+
+      <!-- AUTO: Row-based flex layout -->
+      <div *ngSwitchCase="'auto'" class="space-y-4">
+        <ng-container *ngFor="let rowFields of rows">
+          <div class="flex w-full" [ngStyle]="{ gap: getSpacingValue(settings) }">
+            <ng-container *ngFor="let f of rowFields">
+              <ng-container [ngSwitch]="f.type">
+                  <ng-container *ngIf="f.isVisible !== false">
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'text'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'email'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'number'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'tel'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'password'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-textarea [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'textarea'" [field]="f" [formControlName]="f.name"></formfy-textarea>
+                  <formfy-select [lazySelectData]="lazySelectData[f.name]" [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'select'" [field]="f" [formControlName]="f.name"></formfy-select>
+                  <!-- Add other field types as needed -->
+                </ng-container>
+              </ng-container>
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+
+      <!-- TWO-COLUMN: 2-column grid -->
+      <div *ngSwitchCase="'two-column'" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <ng-container *ngFor="let f of fields">
+          <ng-container [ngSwitch]="f.type">
+                  <ng-container *ngIf="f.isVisible !== false">
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'text'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'email'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'number'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'tel'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'password'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-textarea [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'textarea'" [field]="f" [formControlName]="f.name"></formfy-textarea>
+                  <formfy-select [disabled]="f.disabled === false" [lazySelectData]="lazySelectData[f.name]" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'select'" [field]="f" [formControlName]="f.name"></formfy-select>
+                  <!-- Add other field types as needed -->
+                </ng-container>
+              </ng-container>
+        </ng-container>
+      </div>
+
+      <!-- GRID: N-column grid -->
+      <div *ngSwitchCase="'grid'" class="grid" [ngStyle]="{ gap: getSpacingValue(settings), 'grid-template-columns': 'repeat(' + (settings.gridColumns || 2) + ', 1fr)' }">
+        <ng-container *ngFor="let f of fields">
+          <ng-container [ngSwitch]="f.type">
+                  <ng-container *ngIf="f.isVisible !== false">
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'text'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'email'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'number'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'tel'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'password'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-textarea [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'textarea'" [field]="f" [formControlName]="f.name"></formfy-textarea>
+                  <formfy-select [disabled]="f.disabled === false" [lazySelectData]="lazySelectData[f.name]" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'select'" [field]="f" [formControlName]="f.name"></formfy-select>
+                  <!-- Add other field types as needed -->
+                </ng-container>
+              </ng-container>
+        </ng-container>
+      </div>
+
+      <!-- SINGLE COLUMN (default) -->
+      <div *ngSwitchDefault class="flex flex-col space-y-4">
+        <ng-container *ngFor="let f of fields">
+          <ng-container [ngSwitch]="f.type">
+                  <ng-container *ngIf="f.isVisible !== false">
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'text'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'email'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'number'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'tel'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-input [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'password'" [field]="f" [formControlName]="f.name"></formfy-input>
+                  <formfy-textarea [disabled]="f.disabled === false" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'textarea'" [field]="f" [formControlName]="f.name"></formfy-textarea>
+                  <formfy-select [disabled]="f.disabled === false" [lazySelectData]="lazySelectData[f.name]" [ngClass]="f.containerClassName" [ngStyle]="f.style" [showLabel]="settings.showLabels" class="w-full" *ngSwitchCase="'select'" [field]="f" [formControlName]="f.name"></formfy-select>
+                  <!-- Add other field types as needed -->
+                </ng-container>
+              </ng-container>
+        </ng-container>
+      </div>
+
+    </ng-container>
+  </div>
+
+  <div class="flex justify-end space-x-2 mt-4">
     <button *ngIf="settings.showCancelButton" type="button" hlmBtn class="btn-cancel">
       {{ settings.cancelButtonText }}
     </button>
@@ -30,4 +91,3 @@
     </button>
   </div>
 </form>
-

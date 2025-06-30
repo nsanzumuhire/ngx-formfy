@@ -11,13 +11,14 @@ import { FormField } from '../../utils/models';
     selector: 'formfy-input',
     standalone: false,
     template: `
-    <div [ngClass]="field.containerClassName">
-      <label *ngIf="field.label"
-             hlmLabel
-             [for]="field.id"
-             [ngClass]="field.labelClassName">
-        {{ field.label }}
-      </label>
+    <div class="w-full">
+    <label *ngIf="showLabel" 
+        hlmLabel
+        [for]="field.name"
+        [ngClass]="field.labelClassName" [ngClass]="field.labelClassName">
+    {{ field.label }}
+    <span *ngIf="field.required" class="text-red-500">*</span>
+    </label>
 
       <input
         [id]="field.id"
@@ -32,7 +33,7 @@ import { FormField } from '../../utils/models';
         [readonly]="field.readonly"
         [disabled]="disabled"
         [attr.autofocus]="field.autofocus ? '' : null"
-        [class]="field.class"
+        [class]="'w-full ' + field.class"
       />
 
       <formfy-validation-messages [field]="field"></formfy-validation-messages>
@@ -49,9 +50,10 @@ import { FormField } from '../../utils/models';
 })
 export class InputComponent implements ControlValueAccessor {
     @Input() field!: FormField;
-
+    @Input() showLabel!: boolean;
+    @Input() disabled = false;
     value: any = '';
-    disabled = false;
+
 
     // Change these from private → protected
     protected onChange = (value: any) => { };

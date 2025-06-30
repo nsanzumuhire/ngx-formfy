@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormfyModule } from 'ngx-formfy';
 
@@ -9,6 +9,28 @@ import { FormfyModule } from 'ngx-formfy';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
+export class App implements OnInit {
   protected title = 'demo-app for Ngx-formfy';
+  delayedProps: any[] = []
+
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.delayedProps = [
+        {
+          label: 'National ID',
+          value: 'National ID'
+        },
+        {
+          label: 'Passport',
+          value: 'Passport'
+        },
+        {
+          label: 'Other',
+          value: 'Other'
+        }
+      ];
+      console.log('---delayedProps---', this.delayedProps)
+    }, 10000)
+  }
 }

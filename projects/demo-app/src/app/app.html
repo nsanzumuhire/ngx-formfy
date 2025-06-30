@@ -227,7 +227,12 @@
       </svg>
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your NGX-Formfy is running. 🎉</p>
-      <formfy-renderer formName="personal-info"></formfy-renderer>
+      <formfy-renderer 
+         formName="testing-v1" 
+         [lazySelectData]="{
+            idType: delayedProps
+          }">
+      </formfy-renderer>
     </div>
   </div>
 </main>

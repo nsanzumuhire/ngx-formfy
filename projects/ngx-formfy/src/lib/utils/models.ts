@@ -100,4 +100,6 @@ export interface FormField {
 
     // Conditional logic
     condition?: FormFieldCondition;
+    isVisible?: boolean;
+    lazySelectData?: boolean
 }

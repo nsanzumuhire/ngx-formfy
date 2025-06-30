@@ -6,15 +6,22 @@ import { NG_VALUE_ACCESSOR } from "@angular/forms";
   selector: 'formfy-textarea',
   standalone: false,
   template: `
-    <div [ngClass]="field.containerClassName">
-      <label *ngIf="field.label" hlmLabel [for]="field.id" [ngClass]="field.labelClassName">
-        {{ field.label }}
-      </label>
+    <div class="w-full">
+    <label *ngIf="showLabel"
+        hlmLabel
+        [for]="field.name"
+        [ngClass]="field.labelClassName" [ngClass]="field.labelClassName">
+    {{ field.label }}
+    <span *ngIf="field.required" class="text-red-500">*</span>
+    </label>
       <textarea
         [id]="field.id"
         hlmInput
         [placeholder]="field.placeholder"
+        [class]="'w-full'"
+        [disabled]="disabled"
         [ngClass]="field.class">
+        
       </textarea>
       <formfy-validation-messages [field]="field"></formfy-validation-messages>
     </div>

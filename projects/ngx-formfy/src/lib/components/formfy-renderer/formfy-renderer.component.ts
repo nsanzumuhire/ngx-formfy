@@ -9,11 +9,12 @@ import {
 } from '@angular/forms';
 import { Observable, tap } from 'rxjs';
 import { FormfyService } from "../../services/formfy.service";
-import { FormField, FormFieldCondition } from '../../utils/models';
+import { FormField, FormFieldCondition, FormFieldOption } from '../../utils/models';
 import {
     buildValidators
 } from '../../utils/validations';
 import { FormSettings } from '../../utils/form-settings';
+import { getSpacingValue, organizeFieldsIntoRows } from '../../utils/template-utils';
 
 @Component({
     selector: 'formfy-renderer',
@@ -23,12 +24,16 @@ import { FormSettings } from '../../utils/form-settings';
 })
 export class FormfyRendererComponent implements OnInit {
     @Input() formName = '';
+    @Input() lazySelectData: { [fieldName: string]: FormFieldOption[] } = {};
     schema$!: Observable<{
         schema: { fields: any; settings: any; }; fields: FormField[]; settings: any
     }>;
     form!: FormGroup;
     fields!: FormField[];
     settings!: FormSettings;
+    rows!: FormField[][];
+
+    getSpacingValue = getSpacingValue;
 
     constructor(private svc: FormfyService, private fb: FormBuilder) { }
 
@@ -40,14 +45,14 @@ export class FormfyRendererComponent implements OnInit {
         this.schema$ = this.svc.getFormSchema(this.formName);
         this.schema$.subscribe(response => {
             const { fields, settings } = response.schema;
-
-            console.log('---response---', response.schema);
-            console.log('---settings---', settings);
-            console.log('---fields---', fields);
             this.fields = fields;
             this.settings = settings;
             this.form = this.buildForm(fields);
-            console.log('---form---', this.form);
+
+            if (settings.layout == 'auto') {
+                this.rows = organizeFieldsIntoRows(this.fields);
+
+            }
             this.setupConditions(fields);
         });
     }
@@ -65,20 +70,22 @@ export class FormfyRendererComponent implements OnInit {
             if (f.condition) {
                 const cond = f.condition as FormFieldCondition;
                 cond.rules.forEach(rule => {
-                    this.form.get(rule.field)?.valueChanges.subscribe(() => this.onConditionChange(cond, f.name));
+                    this.form.get(rule.field)?.valueChanges.subscribe(() => this.onConditionChange(cond, f));
                 });
-                this.onConditionChange(cond, f.name);
+                this.onConditionChange(cond, f);
             }
         });
     }
 
-    onConditionChange(cond: FormFieldCondition, name: string) {
-        const target = this.form.get(name)!;
+    onConditionChange(cond: FormFieldCondition, field: FormField) {
+        const target = this.form.get(field.name)!;
         const meets = this.evaluateCondition(cond);
-        if (cond.type === 'visibility') {
-            meets ? target.enable({ emitEvent: false }) : target.disable({ emitEvent: false });
+
+        if (cond.type === 'visibility' || (!cond.type && cond.rules?.length > 0)) {
+            field.isVisible = meets;
         } else if (cond.type === 'enable') {
-            meets ? target.enable() : target.disable();
+            field.disabled = meets
+            meets ? target.enable({ emitEvent: false }) : target.disable({ emitEvent: false });
         }
     }
 
